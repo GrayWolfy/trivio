@@ -1,0 +1,8 @@
+<div class="container">
+    <h2>Edit Employee Department</h2>
+    <form action="<?= $this->url('employee_department', ['action' => 'edit', 'id' => $this->id]) ?>" method="post">
+        <?= $this->formRow($form->get('employee_id')->setValue($employeeDepartment->employee_id)) ?>
+        <?= $this->formRow($form->get('department_id')->setValue($employeeDepartment->department_id)) ?>
+        <?= $this->formSubmit($form->get('submit')) ?>
+    </form>
+</div>

@@ -1,0 +1,66 @@
+<?php
+/**
+ * @var Laminas\View\Renderer\PhpRenderer $this
+ */
+?>
+<?= $this->doctype() ?>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <?= $this->headTitle('Laminas MVC Skeleton')->setSeparator(' - ')->setAutoEscape(false) ?>
+
+    <?= $this->headMeta()
+        ->appendName('viewport', 'width=device-width, initial-scale=1.0')
+        ->appendHttpEquiv('X-UA-Compatible', 'IE=edge')
+    ?>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
+</head>
+<body>
+<a href="/language?lang=en_US">English</a> | <a href="/language?lang=ru_RU">Русский</a>
+<h1><?= $this->translate('hello') . ', Trivio!!!'; ?></h1>
+<nav class="navbar navbar-expand-md navbar-light bg-light">
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+            <div>
+                <li class="nav-item">
+                    <a class="nav-link" href="<?= $this->url('department', ['action' => 'index']) ?>"><?= $this->translate('departments') ?></a>
+                </li>
+            </div>
+            <div>
+                <li class="nav-item">
+                    <a class="nav-link" href="<?= $this->url('user', ['action' => 'index']) ?>"><?= $this->translate('users') ?></a>
+                </li>
+            </div>
+            <div>
+                <li class="nav-item">
+                    <a class="nav-link" href="<?= $this->url('employee', ['action' => 'index']) ?>"><?= $this->translate('employees') ?></a>
+                </li>
+            </div>
+            <div>
+                <li class="nav-item">
+                    <a class="nav-link" href="<?= $this->url('employee_department', ['action' => 'index']) ?>"><?= $this->translate('department_employees') ?></a>
+                </li>
+            </div>
+        </ul>
+    </div>
+</nav>
+<div class="container mt-5">
+    <?= $this->content ?>
+    <hr>
+    <footer class="text-center">
+        <p>
+            &copy; <?= date('Y') ?>
+            <a href="https://getlaminas.org/">Laminas Project</a> a Series of LF Projects, LLC.
+        </p>
+    </footer>
+</div>
+<?= $this->inlineScript() ?>
+</body>
+</html>

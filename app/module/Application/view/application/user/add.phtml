@@ -1,0 +1,27 @@
+<?php
+$form = $this->form;
+$form->setAttribute('method', 'post');
+?>
+
+<?php echo $this->form()->openTag($form); ?>
+
+<?php echo $this->formRow($form->get('id')); ?>
+
+<div class="form-group">
+    <?php echo $this->formLabel($form->get('full_name'), 'Name', null); ?>
+    <?php echo $this->formInput($form->get('full_name')); ?>
+</div>
+
+<div class="form-group">
+    <?php echo $this->formLabel($form->get('birth_date'), 'Birth Date', null); ?>
+    <?php echo $this->formInput($form->get('birth_date')); ?>
+</div>
+
+<div class="form-group">
+    <?php echo $this->formLabel($form->get('birth_place'), 'Birth Place', null); ?>
+    <?php echo $this->formSelect($form->get('birth_place')); ?>
+</div>
+
+<?php echo $this->formSubmit($form->get('submit')); ?>
+
+<?php echo $this->form()->closeTag(); ?>

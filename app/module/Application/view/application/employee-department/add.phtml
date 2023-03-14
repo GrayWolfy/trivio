@@ -1,0 +1,27 @@
+<h1><?php echo $this->title; ?></h1>
+
+<?php $form->setAttribute('class', 'form-horizontal'); ?>
+<?php $form->prepare(); ?>
+<?php echo $this->form()->openTag($form); ?>
+
+<div class="form-group<?php echo $form->get('employee_id')->getMessages() ? ' has-error' : ''; ?>">
+    <?php echo $this->formLabel($form->get('employee_id')); ?>
+    <?php echo $this->formElement($form->get('employee_id')); ?>
+    <?php foreach ($form->get('employee_id')->getMessages() as $message): ?>
+        <span class="help-block"><?php echo $message; ?></span>
+    <?php endforeach; ?>
+</div>
+
+<div class="form-group<?php echo $form->get('department_id')->getMessages() ? ' has-error' : ''; ?>">
+    <?php echo $this->formLabel($form->get('department_id')); ?>
+    <?php echo $this->formElement($form->get('department_id')); ?>
+    <?php foreach ($form->get('department_id')->getMessages() as $message): ?>
+        <span class="help-block"><?php echo $message; ?></span>
+    <?php endforeach; ?>
+</div>
+
+<div class="form-group">
+    <?php echo $this->formElement($form->get('submit')); ?>
+</div>
+
+<?php echo $this->form()->closeTag(); ?>
