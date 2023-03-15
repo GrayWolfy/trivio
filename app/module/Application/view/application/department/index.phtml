@@ -1,4 +1,5 @@
 <h1><?= $this->translate('departments') ?></h1>
+<p><a class="btn btn-primary" href="<?= $this->url('department', ['action' => 'add']) ?>">Add Department</a></p>
 
 <div class="table-responsive">
     <table class="table table-hover">
@@ -22,5 +23,3 @@
         </tbody>
     </table>
 </div>
-
-<p><a class="btn btn-primary" href="<?= $this->url('department', ['action' => 'add']) ?>">Add Department</a></p>
